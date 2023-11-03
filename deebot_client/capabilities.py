@@ -40,6 +40,7 @@ from deebot_client.events import (
     WaterInfoEvent,
     WorkMode,
     WorkModeEvent,
+    PadsCleaningInterval,
     PadsCleaningIntervalEvent,
 )
 from deebot_client.models import CleanAction, CleanMode
@@ -172,7 +173,7 @@ class CapabilitySettings:
     carpet_auto_fan_boost: CapabilitySetEnable[CarpetAutoFanBoostEvent]
     true_detect: CapabilitySetEnable[TrueDetectEvent] | None = None
     volume: CapabilitySet[VolumeEvent, int]
-    pads_cleaning_interval: CapabilitySet[PadsCleaningIntervalEvent, int] | None = None
+    pads_cleaning_interval: CapabilitySetTypes[PadsCleaningIntervalEvent, PadsCleaningInterval] | None = None
 
 
 @dataclass(frozen=True, kw_only=True)
